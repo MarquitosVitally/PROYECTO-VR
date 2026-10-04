@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Proyecto de Realidad Virtual</title>
+
+    <!-- A-Frame -->
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+
+    <!-- ESCENA VR -->
+    <a-scene>
+
+        <!-- Fondo -->
+        <a-sky color="#20252b"></a-sky>
+
+        <!-- Piso -->
+        <a-plane
+            position="0 0 0"
+            rotation="-90 0 0"
+            width="20"
+            height="20"
+            color="#444444">
+        </a-plane>
+
+        <!-- Cámara -->
+        <a-camera
+            position="0 1.6 5"
+            look-controls="enabled: true"
+            wasd-controls="enabled: true">
+
+            <!-- Cursor para seleccionar objetos -->
+            <a-cursor
+                color="#FFFFFF">
+            </a-cursor>
+
+        </a-camera>
+
+    </a-scene>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
