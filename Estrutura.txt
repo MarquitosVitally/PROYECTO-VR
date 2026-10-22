@@ -1,0 +1,41 @@
+ProyectoVR/
+│
+├── index.html
+│
+├── css/
+│   └── estilos.css
+│
+├── js/
+│   └── app.js
+│
+├── imagenes/
+│   ├── recorrido1/
+│   │   ├── Ed1.1.jpg
+│   │   ├── Ed1.2.jpg
+│   │   ├── Ed1.3.jpg
+│   │   ├── Ed1.4.jpg
+│   │   └── Ed1.5.jpg
+│   │
+│   ├── recorrido2/
+│   │   ├── Ed2.1.jpg
+│   │   ├── Ed2.2.jpg
+│   │   ├── Ed2.3.jpg
+│   │   └── Ed2.4.jpg
+│   │
+│   ├── recorrido3/
+│   │   ├── Ed3.1.jpg
+│   │   └── ...
+│   │
+│   ├── recorrido4/
+│   │   └── ...
+│   │
+│   ├── recorrido5/
+│   │   └── ...
+│   │
+│   └── recorrido6/
+│       ├── Ed6.1.jpg
+│       ├── Ed6.2.jpg
+│       └── ...
+│
+├── audio/
+└── modelos/

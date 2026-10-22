@@ -1,5 +1,360 @@
+/* ========================= */
+/* CONFIGURACIÓN GENERAL */
+/* ========================= */
+
 body {
     margin: 0;
+    padding: 0;
     overflow: hidden;
     font-family: Arial, sans-serif;
+}
+
+
+/* ========================= */
+/* MENÚ PRINCIPAL */
+/* ========================= */
+
+#menu-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        rgba(5, 10, 20, 0.90),
+        rgba(10, 20, 35, 0.95)
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+
+/* ========================= */
+/* CONTENIDO DEL MENÚ */
+/* ========================= */
+
+.menu-contenido {
+    text-align: center;
+    color: white;
+    padding: 40px;
+}
+
+
+/* ========================= */
+/* TÍTULO */
+/* ========================= */
+
+.menu-contenido h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+}
+
+
+/* ========================= */
+/* SUBTÍTULO */
+/* ========================= */
+
+.menu-contenido p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #cccccc;
+}
+
+
+/* ========================= */
+/* BOTONES DEL MENÚ */
+/* ========================= */
+
+.menu-contenido button {
+    display: block;
+
+    width: 300px;
+    margin: 15px auto;
+    padding: 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #1677ff;
+    color: white;
+
+    font-size: 18px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* ========================= */
+/* EFECTO BOTONES DEL MENÚ */
+/* ========================= */
+
+.menu-contenido button:hover {
+    background: #4090ff;
+    transform: scale(1.05);
+}
+
+
+/* ========================= */
+/* CONTROLES DEL RECORRIDO */
+/* ========================= */
+
+#controles-recorrido {
+    position: fixed;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    padding: 15px 25px;
+    border-radius: 12px;
+
+    color: white;
+}
+
+
+/* ========================= */
+/* BOTONES DEL RECORRIDO */
+/* ========================= */
+
+#controles-recorrido button {
+    background: #1677ff;
+
+    border: none;
+    border-radius: 8px;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* ========================= */
+/* EFECTO BOTONES RECORRIDO */
+/* ========================= */
+
+#controles-recorrido button:hover {
+    background: #4090ff;
+}
+
+
+/* ========================= */
+/* CONTADOR DE IMÁGENES */
+/* ========================= */
+
+#contador-imagen {
+    min-width: 100px;
+    text-align: center;
+}
+
+
+/* ========================= */
+/* SELECTOR DE RECORRIDOS */
+/* ========================= */
+
+#selector-recorridos {
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10000;
+
+    display: flex;
+    gap: 8px;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+/* ========================= */
+/* BOTONES SELECTOR */
+/* ========================= */
+
+#selector-recorridos button {
+    background: #30343b;
+
+    color: white;
+
+    border: 1px solid #555;
+
+    padding: 8px 12px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+
+/* ========================= */
+/* EFECTO BOTONES SELECTOR */
+/* ========================= */
+
+#selector-recorridos button:hover {
+    background: #1677ff;
+}
+
+#panel-informacion {
+    position: fixed;
+
+    top: 50%;
+    right: 30px;
+
+    transform: translateY(-50%);
+
+    width: 320px;
+
+    background: rgba(10, 15, 20, 0.92);
+
+    color: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    z-index: 10001;
+
+    display: none;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+#panel-informacion h2 {
+    margin-top: 0;
+
+    color: #ffffff;
+}
+
+#panel-informacion p {
+    color: #cccccc;
+
+    line-height: 1.6;
+}
+
+#btn-cerrar-info {
+    width: 100%;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #1677ff;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+#btn-cerrar-info:hover {
+    background: #4090ff;
+}
+
+#estado-recorrido {
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+
+    min-width: 140px;
+}
+
+#nombre-recorrido {
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #ffffff;
+}
+
+#contador-imagen {
+    font-size: 13px;
+
+    color: #bbbbbb;
+
+    margin-top: 3px;
+}
+
+#btn-vr-anterior:hover,
+#btn-vr-siguiente:hover {
+    cursor: pointer;
+}
+
+
+.texto-seleccion {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    color: #cccccc;
+}
+
+#menu-recorridos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    width: 420px;
+
+    margin: 0 auto 25px;
+}
+
+#menu-recorridos button {
+    padding: 12px 8px;
+
+    border: 1px solid #555;
+
+    border-radius: 8px;
+
+    background: #30343b;
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        background 0.2s;
+}
+
+#menu-recorridos button:hover {
+    background: #1677ff;
+
+    transform: scale(1.05);
+}
+
+#menu-recorridos button.seleccionado {
+    background: #1677ff;
+
+    border-color: #ffffff;
+
+    transform: scale(1.05);
 }
