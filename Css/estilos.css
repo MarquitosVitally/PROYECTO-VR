@@ -1,360 +1,358 @@
-/* ========================= */
-/* CONFIGURACIÓN GENERAL */
-/* ========================= */
-
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
+* {
+    box-sizing: border-box;
 }
 
-
-/* ========================= */
-/* MENÚ PRINCIPAL */
-/* ========================= */
-
-#menu-principal {
-    position: fixed;
-    top: 0;
-    left: 0;
-
+html,
+body {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    background: linear-gradient(
-        rgba(5, 10, 20, 0.90),
-        rgba(10, 20, 35, 0.95)
-    );
+body {
+    color: #ffffff;
+    background: #0b1220;
+}
 
+button {
+    font-family: inherit;
+}
+
+.inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(22, 119, 255, 0.18),
+            transparent 40%
+        ),
+        linear-gradient(135deg, #0b1220, #17283e);
+}
+
+.menu-principal {
+    width: 100%;
+    max-width: 620px;
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 22px;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.icono-proyecto {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    z-index: 9999;
-}
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 25px;
 
-
-/* ========================= */
-/* CONTENIDO DEL MENÚ */
-/* ========================= */
-
-.menu-contenido {
-    text-align: center;
-    color: white;
-    padding: 40px;
-}
-
-
-/* ========================= */
-/* TÍTULO */
-/* ========================= */
-
-.menu-contenido h1 {
-    font-size: 50px;
-    margin-bottom: 10px;
-    letter-spacing: 5px;
-}
-
-
-/* ========================= */
-/* SUBTÍTULO */
-/* ========================= */
-
-.menu-contenido p {
-    font-size: 20px;
-    margin-bottom: 40px;
-    color: #cccccc;
-}
-
-
-/* ========================= */
-/* BOTONES DEL MENÚ */
-/* ========================= */
-
-.menu-contenido button {
-    display: block;
-
-    width: 300px;
-    margin: 15px auto;
-    padding: 15px;
-
-    border: none;
-    border-radius: 8px;
-
+    border-radius: 18px;
     background: #1677ff;
+
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.etiqueta {
+    color: #60a5fa;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.menu-principal h1 {
+    margin: 18px 0;
+    font-size: clamp(28px, 5vw, 42px);
+    letter-spacing: 1px;
+}
+
+.descripcion {
+    max-width: 440px;
+    margin: 0 auto 32px;
+
+    color: #b9c5d6;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    min-height: 54px;
+    padding: 14px 18px;
+
+    color: #ffffff;
+    background: #202f43;
+
+    border: 1px solid #3a4a60;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.boton:hover {
+    background: #30435c;
+    transform: translateY(-2px);
+}
+
+.boton.principal {
+    background: #1677ff;
+    border-color: #1677ff;
+}
+
+.boton.principal:hover {
+    background: #4090ff;
+}
+
+.boton span {
+    font-size: 18px;
+}
+
+.pie {
+    margin: 35px 0 0;
+    color: #77879c;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 500px) {
+    .menu-principal {
+        padding: 35px 20px;
+    }
+
+    .menu-principal h1 {
+        font-size: 28px;
+    }
+
+    .descripcion {
+        font-size: 14px;
+    }
+}
+
+
+/* ==============================
+   CONTROLES DE MOVIMIENTO VR
+============================== */
+
+#controles-movimiento {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.fila-controles {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+#controles-movimiento button {
+    width: 58px;
+    height: 58px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 15px;
+
+    background: rgba(15, 35, 65, 0.88);
     color: white;
 
-    font-size: 18px;
+    font-size: 28px;
+    font-weight: bold;
+
     cursor: pointer;
+    touch-action: none;
 
-    transition: 0.3s;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+#controles-movimiento button:hover {
+    background: #1677ff;
+    box-shadow: 0 0 18px rgba(22, 119, 255, 0.55);
+}
+
+#controles-movimiento button:active {
+    background: #0b55b5;
+    transform: scale(0.92);
+}
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+    #controles-movimiento {
+        bottom: 15px;
+        left: 15px;
+    }
+
+    #controles-movimiento button {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        border-radius: 12px;
+    }
 }
 
 
-/* ========================= */
-/* EFECTO BOTONES DEL MENÚ */
-/* ========================= */
-
-.menu-contenido button:hover {
-    background: #4090ff;
-    transform: scale(1.05);
-}
-
-
-/* ========================= */
-/* CONTROLES DEL RECORRIDO */
-/* ========================= */
-
-#controles-recorrido {
+/* Barra superior de la experiencia VR */
+#barra-vr {
     position: fixed;
-
-    bottom: 30px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    z-index: 10000;
+    top: 18px;
+    left: 20px;
+    right: 20px;
+    z-index: 1000;
 
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
 
-    background: rgba(0, 0, 0, 0.75);
+    padding: 12px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
 
-    padding: 15px 25px;
-    border-radius: 12px;
-
+    background: rgba(10, 24, 45, 0.85);
     color: white;
+    font-family: Arial, sans-serif;
+    backdrop-filter: blur(10px);
 }
 
-
-/* ========================= */
-/* BOTONES DEL RECORRIDO */
-/* ========================= */
-
-#controles-recorrido button {
-    background: #1677ff;
-
-    border: none;
-    border-radius: 8px;
-
-    color: white;
-
-    padding: 12px 20px;
-
-    font-size: 16px;
-    cursor: pointer;
-}
-
-
-/* ========================= */
-/* EFECTO BOTONES RECORRIDO */
-/* ========================= */
-
-#controles-recorrido button:hover {
-    background: #4090ff;
-}
-
-
-/* ========================= */
-/* CONTADOR DE IMÁGENES */
-/* ========================= */
-
-#contador-imagen {
-    min-width: 100px;
-    text-align: center;
-}
-
-
-/* ========================= */
-/* SELECTOR DE RECORRIDOS */
-/* ========================= */
-
-#selector-recorridos {
-    position: fixed;
-
-    top: 20px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    z-index: 10000;
-
+.info-vr {
     display: flex;
-    gap: 8px;
-
-    background: rgba(0, 0, 0, 0.75);
-
-    padding: 10px;
-    border-radius: 10px;
+    align-items: center;
+    gap: 12px;
 }
 
+.info-vr strong,
+.info-vr small {
+    display: block;
+}
 
-/* ========================= */
-/* BOTONES SELECTOR */
-/* ========================= */
+.info-vr small {
+    margin-top: 4px;
+    color: #cbd5e1;
+}
 
-#selector-recorridos button {
-    background: #30343b;
+.indicador-vr {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #35dc86;
+    box-shadow: 0 0 10px #35dc86;
+}
 
+#btn-salir-vr {
+    padding: 9px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 9px;
+    background: #b42332;
     color: white;
-
-    border: 1px solid #555;
-
-    padding: 8px 12px;
-
-    border-radius: 6px;
-
     cursor: pointer;
 }
 
-
-/* ========================= */
-/* EFECTO BOTONES SELECTOR */
-/* ========================= */
-
-#selector-recorridos button:hover {
-    background: #1677ff;
+#btn-salir-vr:hover {
+    background: #e03142;
 }
 
-#panel-informacion {
+#estado-vr {
     position: fixed;
+    right: 20px;
+    bottom: 22px;
+    z-index: 999;
 
-    top: 50%;
-    right: 30px;
-
-    transform: translateY(-50%);
-
-    width: 320px;
-
-    background: rgba(10, 15, 20, 0.92);
-
-    color: white;
-
-    padding: 25px;
-
-    border-radius: 15px;
-
-    z-index: 10001;
-
-    display: none;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-#panel-informacion h2 {
-    margin-top: 0;
-
-    color: #ffffff;
-}
-
-#panel-informacion p {
-    color: #cccccc;
-
-    line-height: 1.6;
-}
-
-#btn-cerrar-info {
-    width: 100%;
-
-    padding: 10px;
-
-    border: none;
-
-    border-radius: 7px;
-
-    background: #1677ff;
-
-    color: white;
-
-    cursor: pointer;
-}
-
-#btn-cerrar-info:hover {
-    background: #4090ff;
-}
-
-#estado-recorrido {
     display: flex;
     flex-direction: column;
+    gap: 7px;
 
-    text-align: center;
-
-    min-width: 140px;
-}
-
-#nombre-recorrido {
-    font-size: 14px;
-    font-weight: bold;
-
-    color: #ffffff;
-}
-
-#contador-imagen {
-    font-size: 13px;
-
-    color: #bbbbbb;
-
-    margin-top: 3px;
-}
-
-#btn-vr-anterior:hover,
-#btn-vr-siguiente:hover {
-    cursor: pointer;
-}
-
-
-.texto-seleccion {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 17px;
-    color: #cccccc;
-}
-
-#menu-recorridos {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 10px;
-
-    width: 420px;
-
-    margin: 0 auto 25px;
-}
-
-#menu-recorridos button {
-    padding: 12px 8px;
-
-    border: 1px solid #555;
-
-    border-radius: 8px;
-
-    background: #30343b;
-
+    padding: 12px 15px;
+    border-radius: 12px;
+    background: rgba(10, 24, 45, 0.8);
     color: white;
-
-    font-size: 14px;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s,
-        background 0.2s;
+    font: 13px Arial, sans-serif;
+    pointer-events: none;
 }
 
-#menu-recorridos button:hover {
-    background: #1677ff;
+@media (max-width: 600px) {
+    #barra-vr {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 10px;
+    }
 
-    transform: scale(1.05);
+    #estado-vr {
+        right: 10px;
+        bottom: 15px;
+        font-size: 11px;
+    }
 }
 
-#menu-recorridos button.seleccionado {
-    background: #1677ff;
 
-    border-color: #ffffff;
+/* Página de experiencia VR */
+body.pagina-vr {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #0b1220;
+}
 
-    transform: scale(1.05);
+.pagina-vr a-scene {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.pagina-vr #barra-vr,
+.pagina-vr #controles-movimiento,
+.pagina-vr #estado-vr {
+    z-index: 10;
+}
+
+.pagina-vr #controles-movimiento button {
+    touch-action: none;
 }

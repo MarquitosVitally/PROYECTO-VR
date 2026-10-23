@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiencia VR</title>
+
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+
+<body class="pagina-vr">
+
+    <!-- Escena de realidad virtual -->
+    <a-scene
+        embedded
+        vr-mode-ui="enabled: true"
+        renderer="antialias: true">
+
+        <!-- Iluminación -->
+        <a-light type="ambient" color="#ffffff" intensity="1"></a-light>
+
+        <!-- Fotografía plana de ejemplo -->
+        <a-image
+            id="imagen-recorrido"
+            src="../imagenes/recorrido1/Ed1.1.jpg"
+            position="0 1.6 -3"
+            width="4"
+            height="2.25">
+        </a-image>
+
+        <!-- Cámara VR -->
+        <a-camera
+            id="camara"
+            position="0 1.6 0"
+            look-controls="enabled: true; mouseEnabled: true; touchEnabled: true"
+            wasd-controls="enabled: true; acceleration: 20">
+
+            <a-cursor
+                color="#ffffff"
+                fuse="false">
+            </a-cursor>
+
+        </a-camera>
+    </a-scene>
+
+    <!-- Barra superior -->
+    <div id="barra-vr">
+        <div class="info-vr">
+            <span class="indicador-vr"></span>
+
+            <div>
+                <strong>Experiencia VR</strong>
+                <small id="nombre-recorrido">Recorrido 1</small>
+            </div>
+        </div>
+
+        <button id="btn-salir-vr" type="button">
+            ✕ Salir
+        </button>
+    </div>
+
+    <!-- Controles de movimiento -->
+    <div id="controles-movimiento">
+        <button id="mover-arriba" type="button"
+                aria-label="Avanzar">↑</button>
+
+        <div class="fila-controles">
+            <button id="mover-izquierda" type="button"
+                    aria-label="Mover izquierda">←</button>
+
+            <button id="mover-abajo" type="button"
+                    aria-label="Retroceder">↓</button>
+
+            <button id="mover-derecha" type="button"
+                    aria-label="Mover derecha">→</button>
+        </div>
+    </div>
+
+    <!-- Indicaciones -->
+    <div id="estado-vr">
+        <span>🖱️ Mouse: mirar alrededor</span>
+        <span>🎮 Flechas: desplazarse</span>
+    </div>
+
+    <!-- JavaScript del proyecto -->
+    <script src="../js/experiencia.js"></script>
+
+</body>
+</html>
